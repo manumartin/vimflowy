@@ -10,7 +10,7 @@ services:
       - "3000"
     volumes:
       - "vimflowy-db:/app/db"
-  server:
+  caddy:
     image: abiosoft/caddy
     container_name: caddy
     restart: always
