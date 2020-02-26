@@ -1,0 +1,27 @@
+version: '2'
+services:
+  tasks:
+    image: vimflowy:dev
+    container_name: tasks
+    restart: always
+    environment:
+      VIMFLOWY_PASSWORD: 'supersecretpassword'
+    ports:
+      - "3000"
+    volumes:
+      - "vimflowy-db:/app/db"
+  server:
+    image: abiosoft/caddy
+    container_name: caddy
+    restart: always
+    ports:
+    - "80:80"
+    - "443:443"
+    links:
+    - tasks
+    volumes:
+    - "./Caddyfile:/etc/Caddyfile"
+
+volumes:
+  vimflowy-db:
+

@@ -1,0 +1,6 @@
+32.242.168.243 {
+    proxy / http://tasks:3000/ {
+        websocket
+    }
+    tls duckncover@pm.me 
+}
