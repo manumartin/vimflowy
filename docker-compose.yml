@@ -5,11 +5,11 @@ services:
     container_name: tasks
     restart: always
     environment:
-      VIMFLOWY_PASSWORD: 'password'
+      VIMFLOWY_PASSWORD: 'supersecretpassword'
     ports:
       - "3000:3000"
     volumes:
-      - "vimflowy-db:/home/ubuntu/data/proyectos/plan/vimflowy/db"
+      - "/home/ubuntu/data/proyectos/plan/vimflowy/db:/app/db"
   caddy:
     image: abiosoft/caddy:latest
     container_name: caddy
@@ -22,6 +22,6 @@ services:
     volumes:
     - "./Caddyfile:/etc/Caddyfile"
 
-volumes:
-  vimflowy-db:
+#volumes:
+#  vimflowy-db:
 
