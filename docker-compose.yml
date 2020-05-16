@@ -7,11 +7,11 @@ services:
     environment:
       VIMFLOWY_PASSWORD: 'supersecretpassword'
     ports:
-      - "3000"
+      - "3000:3000"
     volumes:
       - "vimflowy-db:/app/db"
   caddy:
-    image: abiosoft/caddy
+    image: abiosoft/caddy:latest
     container_name: caddy
     restart: always
     ports:

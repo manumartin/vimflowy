@@ -1,6 +1,6 @@
-32.242.168.243 {
+:443 {
+    tls self_signed
     proxy / http://tasks:3000/ {
         websocket
     }
-    tls duckncover@pm.me 
 }
